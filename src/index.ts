@@ -1,6 +1,5 @@
 import { NetworkManager } from "./lib/NetworkManager";
-import { IInterceptor } from "./types";
-import { IHttpClient } from "./types";
+import { IInterceptor, IHttpClient } from "./types";
 import { HttpClient } from "./lib/HttpClient";
 
 export * from "./types";
