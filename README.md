@@ -1,5 +1,9 @@
 # Algo Network Manager
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-algo--network-blue?logo=github)](https://github.com/necipsunbul/algo-network)
+[![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue?logo=typescript)](https://github.com/necipsunbul/algo-network)
+[![License: ISC](https://img.shields.io/badge/License-ISC-green.svg)](https://github.com/necipsunbul/algo-network/blob/master/LICENSE)
+
 A modern and flexible TypeScript library for HTTP client management. Simplifies request/response handling with interceptor support.
 
 ## Installation
@@ -178,6 +182,36 @@ interface IHttpClient {
 
 ISC
 
+## Repository
+
+- **GitHub**: [https://github.com/necipsunbul/algo-network](https://github.com/necipsunbul/algo-network)
+- **Issues**: [Report bugs or request features](https://github.com/necipsunbul/algo-network/issues)
+- **Discussions**: [Join the community discussion](https://github.com/necipsunbul/algo-network/discussions)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please make sure to update tests as appropriate and follow the existing code style.
+
+### Development
+
+```bash
+# Clone the repository
+git clone https://github.com/necipsunbul/algo-network.git
+
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Run tests
+npm test
+```
