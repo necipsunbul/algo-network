@@ -3,7 +3,10 @@ import { IInterceptor } from "./types";
 import { IHttpClient } from "./types";
 import { HttpClient } from "./lib/HttpClient";
 
+export * from "./types";
+
 export { HttpClient };
+export { NetworkManager };
 
 export default function createAlgoInstance(
   httpClient: IHttpClient,
