@@ -14,7 +14,7 @@ npm install algo-network-manager
 
 ## Basic Usage
 
-```typescript
+```typescriptnpm
 import createAlgoInstance, { HttpClient } from "algo-network-manager";
 
 const client = createAlgoInstance(
@@ -61,10 +61,10 @@ Interceptors are used to intercept request and response operations.
 ### Example Auth Interceptor
 
 ```typescript
-import { IInterceptor, IAuthService } from "algo-network-manager";
+import { IInterceptor } from "algo-network-manager";
 
 export class AuthInterceptor implements IInterceptor {
-  constructor(private authService: IAuthService) {}
+  constructor() {}
 
   onRequest(config: any): any {
     const token = localStorage.getItem("your_token_title");
