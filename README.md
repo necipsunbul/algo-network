@@ -100,7 +100,7 @@ const client = createAlgoInstance(
 
 // Usage
 client.get("/users").then((response) => {
-  console.log(response.data);
+  console.log(response);
 });
 
 client
@@ -109,7 +109,7 @@ client
     email: "john@example.com",
   })
   .then((response) => {
-    console.log("User created:", response.data);
+    console.log("User created:", response);
   });
 ```
 
@@ -146,7 +146,7 @@ const client = createAlgoInstance(
 client
   .get("/api/data")
   .then((response) => {
-    console.log("Success:", response.data);
+    console.log("Success:", response);
   })
   .catch((error) => {
     console.error("Request failed:", error);
