@@ -170,11 +170,12 @@ interface IInterceptor {
 
 ```typescript
 interface IHttpClient {
-  get(url: string, config?: any): Promise<any>;
-  post(url: string, data?: any, config?: any): Promise<any>;
-  put(url: string, data?: any, config?: any): Promise<any>;
-  delete(url: string, config?: any): Promise<any>;
-  patch(url: string, data?: any, config?: any): Promise<any>;
+  get<T>(url: string, config?: any): Promise<T>;
+  post<T>(url: string, data?: any, config?: any): Promise<T>;
+  put<T>(url: string, data?: any, config?: any): Promise<T>;
+  delete<T>(url: string, config?: any): Promise<T>;
+  patch<T>(url: string, data?: any, config?: any): Promise<T>;
+  request<T>(config: any): Promise<T>;
 }
 ```
 
