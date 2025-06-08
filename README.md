@@ -61,7 +61,7 @@ Interceptors are used to intercept request and response operations.
 ### Example Auth Interceptor
 
 ```typescript
-import { IInterceptor } from "algo-network-manager";
+import { type IInterceptor } from "algo-network-manager";
 
 export class AuthInterceptor implements IInterceptor {
   constructor() {}
