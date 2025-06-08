@@ -1,5 +1,10 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
-import { IHttpClient, IInterceptor, NetworkConfig } from "../types";
+import {
+  IAlgoResponse,
+  IHttpClient,
+  IInterceptor,
+  NetworkConfig,
+} from "../types";
 
 export class HttpClient implements IHttpClient {
   private axiosInstance: AxiosInstance;
@@ -81,25 +86,34 @@ export class HttpClient implements IHttpClient {
     this.axiosInstance.defaults.timeout = timeout;
   }
 
-  async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  async get<T>(
+    url: string,
+    config?: AxiosRequestConfig
+  ): Promise<IAlgoResponse<T>> {
     const response: AxiosResponse<T> = await this.axiosInstance.get(
       url,
       config
     );
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status,
+    };
   }
 
   async post<T>(
     url: string,
     data?: any,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<IAlgoResponse<T>> {
     const response: AxiosResponse<T> = await this.axiosInstance.post(
       url,
       data,
       config
     );
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status,
+    };
   }
 
   async put<T>(
@@ -115,29 +129,41 @@ export class HttpClient implements IHttpClient {
     return response.data;
   }
 
-  async delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  async delete<T>(
+    url: string,
+    config?: AxiosRequestConfig
+  ): Promise<IAlgoResponse<T>> {
     const response: AxiosResponse<T> = await this.axiosInstance.delete(
       url,
       config
     );
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status,
+    };
   }
 
   async patch<T>(
     url: string,
     data?: any,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<IAlgoResponse<T>> {
     const response: AxiosResponse<T> = await this.axiosInstance.patch(
       url,
       data,
       config
     );
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status,
+    };
   }
 
-  async request(config: AxiosRequestConfig): Promise<any> {
+  async request<T>(config: AxiosRequestConfig): Promise<IAlgoResponse<T>> {
     const response = await this.axiosInstance.request(config);
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status,
+    };
   }
 }
