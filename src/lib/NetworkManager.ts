@@ -1,4 +1,9 @@
-import { IHttpClient, IInterceptor, HttpClientMethods } from "../types";
+import {
+  IHttpClient,
+  IInterceptor,
+  HttpClientMethods,
+  IAlgoResponse,
+} from "../types";
 
 import { INetworkManager } from "../types";
 
@@ -29,27 +34,39 @@ export class NetworkManager implements INetworkManager {
     }
   }
 
-  async get<T>(url: string, config?: any): Promise<T> {
+  async get<T>(url: string, config?: any): Promise<IAlgoResponse<T>> {
     return this.httpClient.get<T>(url, config);
   }
 
-  async post<T>(url: string, data?: any, config?: any): Promise<T> {
+  async post<T>(
+    url: string,
+    data?: any,
+    config?: any
+  ): Promise<IAlgoResponse<T>> {
     return this.httpClient.post<T>(url, data, config);
   }
 
-  async put<T>(url: string, data?: any, config?: any): Promise<T> {
+  async put<T>(
+    url: string,
+    data?: any,
+    config?: any
+  ): Promise<IAlgoResponse<T>> {
     return this.httpClient.put<T>(url, data, config);
   }
 
-  async delete<T>(url: string, config?: any): Promise<T> {
+  async delete<T>(url: string, config?: any): Promise<IAlgoResponse<T>> {
     return this.httpClient.delete<T>(url, config);
   }
 
-  async patch<T>(url: string, data?: any, config?: any): Promise<T> {
+  async patch<T>(
+    url: string,
+    data?: any,
+    config?: any
+  ): Promise<IAlgoResponse<T>> {
     return this.httpClient.patch<T>(url, data, config);
   }
 
-  async request<T>(config: any): Promise<T> {
+  async request<T>(config: any): Promise<IAlgoResponse<T>> {
     return this.httpClient.request<T>(config);
   }
 }
