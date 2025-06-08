@@ -122,8 +122,28 @@ const httpClient = new HttpClient({
   headers: {
     "Content-Type": "application/json",
   },
+  validateStatus: (status: number) => status >= 200 && status < 300,
 });
 ```
+
+### Configuration Options
+
+- `baseURL`: Base URL for all requests
+- `timeout`: Request timeout in milliseconds (default: 10000)
+- `headers`: Default headers to be sent with every request
+- `validateStatus`: Function to determine if HTTP status code should be considered successful
+
+  - **Type**: `(status: number) => boolean`
+  - **Default**: `undefined` (uses Axios default: 200-299 range)
+  - **Example**:
+
+    ```typescript
+    // Accept only 200 status as successful
+    validateStatus: (status) => status === 200;
+
+    // Accept 200-399 range as successful
+    validateStatus: (status) => status >= 200 && status < 400;
+    ```
 
 ## Advanced Usage
 

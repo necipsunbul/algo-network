@@ -32,6 +32,7 @@ export interface NetworkConfig {
   baseURL?: string;
   timeout?: number;
   headers?: Record<string, string>;
+  validateStatus?: (status: number) => boolean;
 }
 
 export interface IAlgoResponse<T> {

@@ -15,6 +15,7 @@ export class HttpClient implements IHttpClient {
       baseURL: config?.baseURL || "",
       timeout: config?.timeout || 10000,
       headers: config?.headers || {},
+      validateStatus: config?.validateStatus || undefined,
     });
 
     this.setupInterceptors();
